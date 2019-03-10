@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	
+	<pluginGroups></pluginGroups>
+	<proxies></proxies>
+	
+	<servers>
+		<server>
+			<id>nexus-releases</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
+		<server>
+			<id>nexus-snapshots</id>
+			<username>admin</username>
+			<password>admin123</password>
+		</server>
+		<server>
+			<id>ftp-repository</id>
+			<username>jia.wydiy.com</username>
+			<password>jiadiy0806</password>
+		</server>
+	</servers>
+
+	<mirrors>
+		<mirror>
+			<id>nexus</id>
+			<name>nexus</name>
+			<mirrorOf>*</mirrorOf>
+			<url>http://maven.chcbz.net/repository/maven-public/</url>
+		</mirror>
+	</mirrors>
+	
+	<profiles>
+		<profile>
+			<id>nexus</id>
+			<repositories>
+				<repository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy></snapshots>
+				</repository>
+				<repository>
+					<id>3rd_party</id>
+					<url>http://maven.chcbz.net/repository/3rd_party/</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy></snapshots>
+				</repository>
+			</repositories>
+			
+			<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled></snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+	
+	<activeProfiles>
+		<activeProfile>nexus</activeProfile>
+	</activeProfiles>
+</settings>
